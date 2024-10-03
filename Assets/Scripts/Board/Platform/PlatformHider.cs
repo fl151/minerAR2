@@ -12,14 +12,12 @@ public class PlatformHider : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("");
-
-        if (_platform.IsFlaged == false && other.gameObject.GetComponent<Player>())
-        {
-            _platform.Cell.Open();
-
-            gameObject.SetActive(false);
-        }
+        if(other.gameObject.GetComponent<Player>())
+            if (FlagInfo.Instance.FlagIsActive)
+                _platform.TapFlag();
+            else
+                if (_platform.IsFlaged == false)
+                    HideSelf();
     }
 
     public void Hide()
@@ -28,5 +26,12 @@ public class PlatformHider : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+    }
+
+    private void HideSelf()
+    {
+        _platform.Cell.Open();
+
+        gameObject.SetActive(false);
     }
 }
