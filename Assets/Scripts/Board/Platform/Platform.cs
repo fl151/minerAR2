@@ -27,6 +27,7 @@ public class Platform : MonoBehaviour
     public void TapFlag()
     {
         _isFlaged = !_isFlaged;
+        _cell.SetFlag(_isFlaged);
         FlagAction?.Invoke();
     }
 

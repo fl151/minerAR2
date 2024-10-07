@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class VoidCell : Cell
 {
@@ -13,7 +11,7 @@ public class VoidCell : Cell
 
     public override void Open()
     {
-        if(_isOpen == false)
+        if(_isOpen == false && _isFlaged == false)
         {
             base.Open();
 

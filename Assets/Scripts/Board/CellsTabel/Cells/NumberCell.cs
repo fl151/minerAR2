@@ -1,7 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class NumberCell : Cell
 {
     private int _countMinesAround = 0;
@@ -15,7 +11,7 @@ public class NumberCell : Cell
 
     public override void Open()
     {
-        if(_isOpen == false)
+        if(_isOpen == false && _isFlaged == false)
         {
             base.Open();
         } 

@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.Events;
 
 public class MineCell : Cell
@@ -9,7 +6,7 @@ public class MineCell : Cell
 
     public override void Open()
     {
-        if (_isOpen == false)
+        if (_isOpen == false && _isFlaged == false)
         {
             BOOOM?.Invoke();
             base.Open();
