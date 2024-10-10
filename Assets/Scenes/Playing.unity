@@ -177,7 +177,7 @@ GameObject:
   - component: {fileID: 613354327}
   - component: {fileID: 613354326}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: GameResultController
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class Board : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class Board : MonoBehaviour
     private CounterOpenedCells _COC;
     private List<Cell> _mineCells;
     private Cell[,] _cells;
+
+    private Queue<CellModel> _deletingCells = new Queue<CellModel>();
 
     [SerializeField] private int _countMines = 10;
     [SerializeField] private int _xSize = 10;
@@ -26,6 +29,11 @@ public class Board : MonoBehaviour
         FollowEvents();
     }
 
+    private void Update()
+    {
+        TryDeleteCell();
+    }
+
     private void OnDisable()
     {
         UnfollowEvents();
@@ -38,11 +46,13 @@ public class Board : MonoBehaviour
         CreateBoard();
         SpawnCells(_cells);
         FollowEvents();
+
+        GameResultController.Instance.Restart();
     }
 
     private void OnAllCellsOpened()
     {
-        Debug.Log("Win");
+        GameResultController.Instance.TryWin();
     }
 
     private void OnMineExpoded()
@@ -52,7 +62,7 @@ public class Board : MonoBehaviour
             ((MineCell)mineCell).BOOOM -= OnMineExpoded;
         }
 
-        Debug.Log("BOOM");
+        GameResultController.Instance.TryLose();
     }
 
     private void OnCellOpened()
@@ -117,9 +127,24 @@ public class Board : MonoBehaviour
     {
         var cells = GetComponentsInChildren<CellModel>();
 
-        for (int i = 0; i < cells.GetLength(0); i++)
+        var tempCells = from s in cells where s.gameObject.activeInHierarchy select s;
+
+        var tempCellsList = tempCells.ToList();
+
+        for (int i = 0; i < tempCellsList.Count; i++)
         {
-            cells[i].gameObject.SetActive(false);
+            var tempCell = tempCellsList[i];
+            tempCell.gameObject.SetActive(false);
+            _deletingCells.Enqueue(tempCell);
+        }
+    }
+
+    private void TryDeleteCell()
+    {
+        if (_deletingCells.Count != 0)
+        {
+            var deletingCell = _deletingCells.Dequeue();
+            Destroy(deletingCell.gameObject);
         }
     }
 }
