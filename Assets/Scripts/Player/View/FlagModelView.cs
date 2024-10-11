@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlagModelView : MonoBehaviour, IActivatable, IDeactivatable
+public class FlagModelView : ModelView, IActivatable, IDeactivatable
 {
     public void Activate()
     {
