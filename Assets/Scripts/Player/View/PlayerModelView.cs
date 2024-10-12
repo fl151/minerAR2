@@ -1,17 +1,47 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerModelView : ModelView, IActivatable, IDeactivatable
+public class PlayerModelView : ModelView
 {
-    public void Activate()
+    private bool _isActive = false;
+
+    private float _timer = 0;
+
+    public override void Activate()
     {
-        throw new System.NotImplementedException();
+        ActivateFirstModel();
+        _isActive = true;
     }
 
-    public void Deactivate()
+    public override void Deactivate()
     {
-        throw new System.NotImplementedException();
+        _isActive = false;
+        StopCoroutine(PlayBlinking());
+        DeactivateModels();
+    }
+
+    private void Update()
+    {
+        if (_isActive)
+        {
+            _timer -= Time.deltaTime;
+
+            if (_timer <= 0)
+            {
+                StartCoroutine(PlayBlinking());
+
+                _timer = Random.Range(1f, 10f);
+            }
+        }
+    }
+
+    private IEnumerator PlayBlinking()
+    {
+        for (int i = 0; i < CountModels; i++)
+        {
+            ActivateNextModel();
+            yield return new WaitForSeconds(0.05f);
+        }
     }
 
 }
