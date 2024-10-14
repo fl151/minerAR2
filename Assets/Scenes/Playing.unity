@@ -949,7 +949,7 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 0.5
+  m_Radius: 0.6
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!33 &1835747127
 MeshFilter:
@@ -1026,7 +1026,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _prefabs:
-  - {fileID: 3252894986553346592, guid: 34539b7f93e8054479a01cc93242bee1, type: 3}
+  - {fileID: 4077842173696347026, guid: b6c08ac478734c744b165717ebfa5d1d, type: 3}
+  - {fileID: 4651749114750122128, guid: e974b47f5261d6d46998153242777b6c, type: 3}
+  - {fileID: 1071655774896182992, guid: 0f3dd35d1334915428fab20c7db81b8b, type: 3}
+  - {fileID: 3128421362095047559, guid: 9f4b0ff2f579f9d4da005a23d228aa04, type: 3}
 --- !u!114 &1835747132
 MonoBehaviour:
   m_ObjectHideFlags: 0
