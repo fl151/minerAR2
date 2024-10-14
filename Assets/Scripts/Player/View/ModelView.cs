@@ -14,9 +14,7 @@ public class ModelView : MonoBehaviour, IActivatable, IDeactivatable
     private void Awake()
     {
         foreach (var prefab in _prefabs)
-        {
             InitModel(prefab);
-        }
     }
 
     protected void ActivateFirstModel()
@@ -36,9 +34,7 @@ public class ModelView : MonoBehaviour, IActivatable, IDeactivatable
     protected void DeactivateModels()
     {
         foreach (var model in _models)
-        {
             model.SetActive(false);
-        }
     }
 
     private void DeactivateModel(int index)
@@ -54,13 +50,9 @@ public class ModelView : MonoBehaviour, IActivatable, IDeactivatable
     private int GetNextIndex(int currentIndex)
     {
         if(currentIndex == _models.Count - 1)
-        {
             currentIndex = 0;
-        }
         else
-        {
             currentIndex += 1;
-        }
 
         return currentIndex;
     }
@@ -79,13 +71,7 @@ public class ModelView : MonoBehaviour, IActivatable, IDeactivatable
         _models.Add(model);
     }
 
-    public virtual void Activate()
-    {
-        
-    }
+    public virtual void Activate(){}
 
-    public virtual void Deactivate()
-    {
-        
-    }
+    public virtual void Deactivate(){}
 }
