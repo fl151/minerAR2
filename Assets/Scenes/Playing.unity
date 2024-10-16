@@ -923,6 +923,7 @@ GameObject:
   - component: {fileID: 1835747133}
   - component: {fileID: 1835747132}
   - component: {fileID: 1835747131}
+  - component: {fileID: 1835747134}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1064,6 +1065,20 @@ MonoBehaviour:
   _flagButton: {fileID: 798805483}
   _player: {fileID: 1835747132}
   _flag: {fileID: 1835747131}
+--- !u!114 &1835747134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835747124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515ef163c17d9ce4ca1f39d3e3f6fc70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabs:
+  - {fileID: 7304303851162987783, guid: cc0253fa83a6e664b8ae148b59436499, type: 3}
 --- !u!1 &1918291588
 GameObject:
   m_ObjectHideFlags: 0
