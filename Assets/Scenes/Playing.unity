@@ -227,7 +227,7 @@ MonoBehaviour:
   OnTargetFound:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1008870507}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -242,7 +242,7 @@ MonoBehaviour:
   OnTargetLost:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1008870507}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
         m_Mode: 6
@@ -583,6 +583,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed2d2ad047dd1e846a332135e6b76c69, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1008870507 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1393079053351581875, guid: a37d39fb351974549bc41466f662408f, type: 3}
+  m_PrefabInstance: {fileID: 1165417716}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1165417716
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -654,7 +659,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2841705280213122267, guid: a37d39fb351974549bc41466f662408f, type: 3}
   m_PrefabInstance: {fileID: 1165417716}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1008870507}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7c22cd22de0c82b4cb44689334430ec5, type: 3}
@@ -923,6 +928,8 @@ GameObject:
   - component: {fileID: 1835747133}
   - component: {fileID: 1835747132}
   - component: {fileID: 1835747131}
+  - component: {fileID: 1835747134}
+  - component: {fileID: 1835747135}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -1064,6 +1071,36 @@ MonoBehaviour:
   _flagButton: {fileID: 798805483}
   _player: {fileID: 1835747132}
   _flag: {fileID: 1835747131}
+  _dead: {fileID: 1835747134}
+  _win: {fileID: 1835747135}
+--- !u!114 &1835747134
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835747124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 515ef163c17d9ce4ca1f39d3e3f6fc70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabs:
+  - {fileID: 2479472780442236038, guid: cc0253fa83a6e664b8ae148b59436499, type: 3}
+--- !u!114 &1835747135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1835747124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f43aa6093a4f2d14cbdefd11c899d877, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _prefabs:
+  - {fileID: 9150098457298595794, guid: 4b34da363e6a20842abf827d7a640c97, type: 3}
 --- !u!1 &1918291588
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ModelView : MonoBehaviour, IActivatable, IDeactivatable
+public abstract class ModelView : MonoBehaviour, IActivatable, IDeactivatable
 {
     [SerializeField] private List<GameObject> _prefabs;
 
@@ -59,8 +59,6 @@ public class ModelView : MonoBehaviour, IActivatable, IDeactivatable
 
     private void InitModel(GameObject prefab)
     {
-        Debug.Log(prefab);
-
         var model = Instantiate(prefab, gameObject.transform);
         model.transform.localScale = new Vector3(0.4f, 0.4f, 0.4f);
         model.transform.Rotate(new Vector3(-90, 180, 0), Space.Self);
@@ -71,7 +69,7 @@ public class ModelView : MonoBehaviour, IActivatable, IDeactivatable
         _models.Add(model);
     }
 
-    public virtual void Activate(){}
+    public abstract void Activate();
 
-    public virtual void Deactivate(){}
+    public abstract void Deactivate();
 }
