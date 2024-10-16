@@ -23,9 +23,13 @@ public class Board : MonoBehaviour
         CreateBoard();
     }
 
-    private void OnEnable()
+    private void Start()
     {
         SpawnCells(_cells);
+    }
+
+    private void OnEnable()
+    {
         FollowEvents();
     }
 
@@ -60,6 +64,7 @@ public class Board : MonoBehaviour
         foreach (var mineCell in _mineCells)
         {
             ((MineCell)mineCell).BOOOM -= OnMineExpoded;
+            mineCell.Open();
         }
 
         GameResultController.Instance.TryLose();

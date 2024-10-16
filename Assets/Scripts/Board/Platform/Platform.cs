@@ -19,9 +19,16 @@ public class Platform : MonoBehaviour
         _cell.Opened += Hide;
     }
 
+    private void OnEnable()
+    {
+        if(_cell != null)
+            _cell.Opened += Hide;
+    }
+
     private void OnDisable()
     {
-        _cell.Opened -= Hide;
+        if (_cell != null)
+            _cell.Opened -= Hide;
     }
 
     public void TapFlag()
