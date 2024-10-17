@@ -12,7 +12,7 @@ public class FlagView : MonoBehaviour
 
     private void Start()
     {
-        FlagAction();
+        FlagAction(false);
     }
 
     private void OnDisable()
@@ -20,8 +20,8 @@ public class FlagView : MonoBehaviour
         _platform.FlagAction -= FlagAction;
     }
 
-    private void FlagAction()
+    private void FlagAction(bool isFlaged)
     {
-        _flag.SetActive(_platform.IsFlaged);
+        _flag.SetActive(isFlaged);
     }
 }

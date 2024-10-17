@@ -11,7 +11,7 @@ public abstract class ModelView : MonoBehaviour, IActivatable, IDeactivatable
 
     protected int CountModels => _models.Count;
 
-    private void Awake()
+    public void Init()
     {
         foreach (var prefab in _prefabs)
             InitModel(prefab);

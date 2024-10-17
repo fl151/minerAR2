@@ -1,10 +1,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
+using UnityEngine.Events;
 
 public class Board : MonoBehaviour
 {
     [SerializeField] private CellModel _cellPrefab;
+    [SerializeField] private GameResultController _grc;
+
+    [SerializeField] private int _countMines = 10;
+    [SerializeField] private int _xSize = 10;
+    [SerializeField] private int _ySize = 10;
+    [SerializeField] private Vector2 _startPoint;
+
 
     private Table _table;
     private CounterOpenedCells _COC;
@@ -13,10 +21,10 @@ public class Board : MonoBehaviour
 
     private Queue<CellModel> _deletingCells = new Queue<CellModel>();
 
-    [SerializeField] private int _countMines = 10;
-    [SerializeField] private int _xSize = 10;
-    [SerializeField] private int _ySize = 10;
-    [SerializeField] private Vector2 _startPoint;
+    public event UnityAction<CellModel> NewCellModel;
+    public event UnityAction<CellModel> DelitingCellModel;
+
+    public int CountMines => _countMines;
 
     private void Awake()
     {
@@ -51,23 +59,23 @@ public class Board : MonoBehaviour
         SpawnCells(_cells);
         FollowEvents();
 
-        GameResultController.Instance.Restart();
+        _grc.Restart();
     }
 
     private void OnAllCellsOpened()
     {
-        GameResultController.Instance.TryWin();
+        _grc.TryWin();
     }
 
     private void OnMineExpoded()
     {
+        _grc.TryLose();
+
         foreach (var mineCell in _mineCells)
         {
             ((MineCell)mineCell).BOOOM -= OnMineExpoded;
             mineCell.Open();
-        }
-
-        GameResultController.Instance.TryLose();
+        } 
     }
 
     private void OnCellOpened()
@@ -86,6 +94,7 @@ public class Board : MonoBehaviour
                                            new Quaternion(), gameObject.transform);
                 cm.transform.localPosition = new Vector3((float)i * 0.25f - 0.125f * (cells.GetLength(0) - 0.75f), 0, (float)j * 0.25f - 0.125f * (cells.GetLength(1) - 0.75f));
                 cm.Init(cells[i, j]);
+                NewCellModel?.Invoke(cm);
             }
         }
     }
@@ -149,6 +158,7 @@ public class Board : MonoBehaviour
         if (_deletingCells.Count != 0)
         {
             var deletingCell = _deletingCells.Dequeue();
+            DelitingCellModel?.Invoke(deletingCell);
             Destroy(deletingCell.gameObject);
         }
     }

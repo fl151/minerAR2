@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerModelStateMachine : MonoBehaviour
 {
     [SerializeField] private FlagButton _flagButton;
+    [SerializeField] private GameResultController _grc;
     [Space]
     [SerializeField] private PlayerModelView _player;
     [SerializeField] private FlagModelView _flag;
@@ -14,6 +15,11 @@ public class PlayerModelStateMachine : MonoBehaviour
 
     private void Awake()
     {
+        _player.Init();
+        _flag.Init();
+        _win.Init();
+        _dead.Init();
+
         _currentModelView = _player;
     }
 
@@ -21,17 +27,17 @@ public class PlayerModelStateMachine : MonoBehaviour
     {
         _flagButton.OnClicked += OnButtonClicked;
 
-        GameResultController.Instance.Win += OnWin;
-        GameResultController.Instance.Lose += OnLose;
-        GameResultController.Instance.Restarted += OnRestart;
+        _grc.Win += OnWin;
+        _grc.Lose += OnLose;
+        _grc.Restarted += OnRestart;
         _currentModelView.Activate();
     }
 
     private void OnDisable()
     {
-        GameResultController.Instance.Win -= OnWin;
-        GameResultController.Instance.Lose -= OnLose;
-        GameResultController.Instance.Restarted -= OnRestart;
+        _grc.Win -= OnWin;
+        _grc.Lose -= OnLose;
+        _grc.Restarted -= OnRestart;
 
         _flagButton.OnClicked -= OnButtonClicked;
         _currentModelView.Deactivate();
@@ -75,11 +81,14 @@ public class PlayerModelStateMachine : MonoBehaviour
 
     private void OnGameStoped(ModelView result)
     {
-        _isGameStoped = true;
+        if(_isGameStoped == false)
+        {
+            _isGameStoped = true;
 
-        _currentModelView.Deactivate();
-        result.Activate();
+            _currentModelView.Deactivate();
+            result.Activate();
 
-        _currentModelView = result;
+            _currentModelView = result;
+        }
     }
 }
