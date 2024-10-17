@@ -741,6 +741,10 @@ PrefabInstance:
       propertyPath: _cellPrefab
       value: 
       objectReference: {fileID: 765930279892493900, guid: 9427c88be3544e24bb4f63d196f715b1, type: 3}
+    - target: {fileID: 2841705280213122267, guid: a37d39fb351974549bc41466f662408f, type: 3}
+      propertyPath: _countMines
+      value: 4
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1494,6 +1498,7 @@ GameObject:
   - component: {fileID: 2016920804}
   - component: {fileID: 2016920803}
   - component: {fileID: 2016920802}
+  - component: {fileID: 2016920806}
   - component: {fileID: 2016920805}
   m_Layer: 5
   m_Name: RestartButton
@@ -1615,6 +1620,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 009c08380aa2d17458e1364d96d5decb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2016920806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2016920800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d8e0518202dc6248a7e10df24232ddb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _grc: {fileID: 613354326}
+  _default: {fileID: 21300000, guid: 8c59b06cdf6b8404c8dec2186b7ec596, type: 3}
+  _win: {fileID: 21300000, guid: 2340a60c394d00f48bbeac25626719b7, type: 3}
+  _image: {fileID: 2016920803}
 --- !u!1 &2107658359
 GameObject:
   m_ObjectHideFlags: 0
