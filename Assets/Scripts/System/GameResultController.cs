@@ -9,16 +9,6 @@ public class GameResultController : MonoBehaviour
 
     private bool _isGamePaused = false;
 
-    public static GameResultController Instance;
-
-    private void Awake()
-    {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
-    }
-
     public void TryWin()
     {
         if(_isGamePaused == false)

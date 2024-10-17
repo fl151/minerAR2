@@ -6,11 +6,13 @@ using UnityEngine.Events;
 public class Board : MonoBehaviour
 {
     [SerializeField] private CellModel _cellPrefab;
+    [SerializeField] private GameResultController _grc;
 
     [SerializeField] private int _countMines = 10;
     [SerializeField] private int _xSize = 10;
     [SerializeField] private int _ySize = 10;
     [SerializeField] private Vector2 _startPoint;
+
 
     private Table _table;
     private CounterOpenedCells _COC;
@@ -57,17 +59,17 @@ public class Board : MonoBehaviour
         SpawnCells(_cells);
         FollowEvents();
 
-        GameResultController.Instance.Restart();
+        _grc.Restart();
     }
 
     private void OnAllCellsOpened()
     {
-        GameResultController.Instance.TryWin();
+        _grc.TryWin();
     }
 
     private void OnMineExpoded()
     {
-        GameResultController.Instance.TryLose();
+        _grc.TryLose();
 
         foreach (var mineCell in _mineCells)
         {

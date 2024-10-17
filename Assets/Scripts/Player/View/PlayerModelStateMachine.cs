@@ -3,6 +3,7 @@ using UnityEngine;
 public class PlayerModelStateMachine : MonoBehaviour
 {
     [SerializeField] private FlagButton _flagButton;
+    [SerializeField] private GameResultController _grc;
     [Space]
     [SerializeField] private PlayerModelView _player;
     [SerializeField] private FlagModelView _flag;
@@ -21,17 +22,17 @@ public class PlayerModelStateMachine : MonoBehaviour
     {
         _flagButton.OnClicked += OnButtonClicked;
 
-        GameResultController.Instance.Win += OnWin;
-        GameResultController.Instance.Lose += OnLose;
-        GameResultController.Instance.Restarted += OnRestart;
+        _grc.Win += OnWin;
+        _grc.Lose += OnLose;
+        _grc.Restarted += OnRestart;
         _currentModelView.Activate();
     }
 
     private void OnDisable()
     {
-        GameResultController.Instance.Win -= OnWin;
-        GameResultController.Instance.Lose -= OnLose;
-        GameResultController.Instance.Restarted -= OnRestart;
+        _grc.Win -= OnWin;
+        _grc.Lose -= OnLose;
+        _grc.Restarted -= OnRestart;
 
         _flagButton.OnClicked -= OnButtonClicked;
         _currentModelView.Deactivate();

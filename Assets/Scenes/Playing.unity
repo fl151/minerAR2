@@ -734,6 +734,10 @@ PrefabInstance:
       value: Board
       objectReference: {fileID: 0}
     - target: {fileID: 2841705280213122267, guid: a37d39fb351974549bc41466f662408f, type: 3}
+      propertyPath: _grc
+      value: 
+      objectReference: {fileID: 613354326}
+    - target: {fileID: 2841705280213122267, guid: a37d39fb351974549bc41466f662408f, type: 3}
       propertyPath: _cellPrefab
       value: 
       objectReference: {fileID: 765930279892493900, guid: 9427c88be3544e24bb4f63d196f715b1, type: 3}
@@ -1296,6 +1300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flagButton: {fileID: 798805483}
+  _grc: {fileID: 613354326}
   _player: {fileID: 1835747132}
   _flag: {fileID: 1835747131}
   _dead: {fileID: 1835747134}
