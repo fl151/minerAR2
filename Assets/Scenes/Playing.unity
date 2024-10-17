@@ -1156,7 +1156,6 @@ GameObject:
   - component: {fileID: 1835747125}
   - component: {fileID: 1835747130}
   - component: {fileID: 1835747129}
-  - component: {fileID: 1835747133}
   - component: {fileID: 1835747132}
   - component: {fileID: 1835747131}
   - component: {fileID: 1835747134}
@@ -1287,24 +1286,6 @@ MonoBehaviour:
   - {fileID: 3252894986553346592, guid: 34539b7f93e8054479a01cc93242bee1, type: 3}
   - {fileID: 5761225579814981832, guid: 6aadb05708e8fde4a9565ad8ff40bc11, type: 3}
   - {fileID: 7339938959019256258, guid: 91c49d36d651c364fba12ce1038e71e0, type: 3}
---- !u!114 &1835747133
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1835747124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2fcd0b903cbc5c141b9dbffae73d5fe1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _flagButton: {fileID: 798805483}
-  _grc: {fileID: 613354326}
-  _player: {fileID: 1835747132}
-  _flag: {fileID: 1835747131}
-  _dead: {fileID: 1835747134}
-  _win: {fileID: 1835747135}
 --- !u!114 &1835747134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,6 +1326,7 @@ GameObject:
   - component: {fileID: 1918291591}
   - component: {fileID: 1918291590}
   - component: {fileID: 1918291593}
+  - component: {fileID: 1918291594}
   m_Layer: 0
   m_Name: ImageTargetPlayer
   m_TagString: Untagged
@@ -1446,7 +1428,7 @@ MonoBehaviour:
   mMotionHint: 1
   mTrackingOptimization: 0
   mTrackingOptimizationNeedsUpgrade: 0
-  mPreview: {fileID: 1918291593}
+  mPreview: {fileID: 1918291594}
 --- !u!4 &1918291592
 Transform:
   m_ObjectHideFlags: 0
@@ -1464,6 +1446,24 @@ Transform:
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1918291593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1918291588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fcd0b903cbc5c141b9dbffae73d5fe1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _flagButton: {fileID: 798805483}
+  _grc: {fileID: 613354326}
+  _player: {fileID: 1835747132}
+  _flag: {fileID: 1835747131}
+  _dead: {fileID: 1835747134}
+  _win: {fileID: 1835747135}
+--- !u!114 &1918291594
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

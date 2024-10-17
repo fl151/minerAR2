@@ -15,6 +15,11 @@ public class PlayerModelStateMachine : MonoBehaviour
 
     private void Awake()
     {
+        _player.Init();
+        _flag.Init();
+        _win.Init();
+        _dead.Init();
+
         _currentModelView = _player;
     }
 
