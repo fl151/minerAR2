@@ -11,7 +11,7 @@ public class Platform : MonoBehaviour
     public Cell Cell => _cell;
     public bool IsFlaged => _isFlaged;
 
-    public event UnityAction FlagAction;
+    public event UnityAction<bool> FlagAction;
 
     public void Init(Cell cell)
     {
@@ -35,7 +35,7 @@ public class Platform : MonoBehaviour
     {
         _isFlaged = !_isFlaged;
         _cell.SetFlag(_isFlaged);
-        FlagAction?.Invoke();
+        FlagAction?.Invoke(_isFlaged);
     }
 
     private void Hide()

@@ -75,11 +75,14 @@ public class PlayerModelStateMachine : MonoBehaviour
 
     private void OnGameStoped(ModelView result)
     {
-        _isGameStoped = true;
+        if(_isGameStoped == false)
+        {
+            _isGameStoped = true;
 
-        _currentModelView.Deactivate();
-        result.Activate();
+            _currentModelView.Deactivate();
+            result.Activate();
 
-        _currentModelView = result;
+            _currentModelView = result;
+        }
     }
 }

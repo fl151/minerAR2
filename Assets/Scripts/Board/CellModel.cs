@@ -7,6 +7,8 @@ public class CellModel : MonoBehaviour
 
     private Cell _cell;
 
+    public Platform Platform => _platform;
+
     public void Init(Cell cell)
     {
         _cell = cell;
@@ -14,6 +16,12 @@ public class CellModel : MonoBehaviour
         _cellView.SetView(_cell);
 
         _cell.Opened += Open;
+    }
+
+    private void OnEnable()
+    {
+        if(_cell != null)
+            _cell.Opened += Open;
     }
 
     private void OnDisable()

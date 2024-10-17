@@ -19,6 +19,4 @@ public class BoardRestarter : MonoBehaviour
     {
         _board.Restart();
     }
-
-
 }
