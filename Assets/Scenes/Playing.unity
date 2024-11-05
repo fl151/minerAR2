@@ -269,13 +269,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: 6148086370
+  mTrackableName: board2
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Miner.xml
-  mAspectRatio: 0.4625
+  mAspectRatio: 1
   mImageTargetType: 0
   mWidth: 1
-  mHeight: 0.4625
+  mHeight: 1
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -325,7 +325,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 764855284}
   mHiddenRoot: {fileID: 0}
-  mTargetName: 6148086370
+  mTargetName: board2
   mDatasetName: Vuforia/Miner.xml
   mCastedBehaviour: {fileID: 764855284}
   mMeshFilter: {fileID: 0}
@@ -1209,8 +1209,8 @@ Transform:
   m_GameObject: {fileID: 1835747124}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.153, y: 0, z: 0.243}
-  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.15, y: 0.15, z: 0.15}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1918291592}
@@ -1421,13 +1421,13 @@ MonoBehaviour:
   PreviewVisible: 1
   RuntimeOcclusion: 0
   RuntimeCollider: 0
-  mTrackableName: photo_2024-10-01_15-36-43
+  mTrackableName: smile
   mInitializedInEditor: 1
   mDataSetPath: Vuforia/Miner.xml
-  mAspectRatio: 1.6305733
+  mAspectRatio: 1
   mImageTargetType: 0
-  mWidth: 0.3
-  mHeight: 0.489172
+  mWidth: 0.1875
+  mHeight: 0.1875
   mRuntimeTexture: {fileID: 0}
   mMotionHint: 1
   mTrackingOptimization: 0
@@ -1481,7 +1481,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mObserverBehaviour: {fileID: 1918291591}
   mHiddenRoot: {fileID: 0}
-  mTargetName: photo_2024-10-01_15-36-43
+  mTargetName: smile
   mDatasetName: Vuforia/Miner.xml
   mCastedBehaviour: {fileID: 1918291591}
   mMeshFilter: {fileID: 0}
