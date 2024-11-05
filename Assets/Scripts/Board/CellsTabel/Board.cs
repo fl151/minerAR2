@@ -92,7 +92,7 @@ public class Board : MonoBehaviour
                 CellModel cm = Instantiate(_cellPrefab,
                                            new Vector3(0, 0, 0),
                                            new Quaternion(), gameObject.transform);
-                cm.transform.localPosition = new Vector3((float)i * 0.25f - 0.125f * (cells.GetLength(0) - 0.75f), 0, (float)j * 0.25f - 0.125f * (cells.GetLength(1) - 0.75f));
+                cm.transform.localPosition = new Vector3((float)i * 0.25f - 0.125f * (cells.GetLength(0) - 1f), 0, (float)j * 0.25f - 0.125f * (cells.GetLength(1) - 1f));
                 cm.Init(cells[i, j]);
                 NewCellModel?.Invoke(cm);
             }
